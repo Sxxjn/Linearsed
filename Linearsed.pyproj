@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Linearsed.py</StartupFile>
+    <StartupFile>tund1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Linearsed.py" />
+    <Compile Include="tund1.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="comands.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
