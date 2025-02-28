@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Iseseisev töö 1.py</StartupFile>
+    <StartupFile>Prakt Lihtsad prgrammid.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="Linearsed.py" />
     <Compile Include="Iseseisev töö 1.py" />
+    <Compile Include="Prakt Lihtsad prgrammid.py" />
     <Compile Include="tund1.py" />
   </ItemGroup>
   <ItemGroup>
