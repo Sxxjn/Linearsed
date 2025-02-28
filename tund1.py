@@ -1,5 +1,6 @@
 # from random import randint *
 from math import *
+from random import randint
 #Ülesanne 1
 # nimi=input("mis on sinu nimi?: ")
 # vanus=int(input("Kui vana sa oled?: "))
@@ -37,5 +38,52 @@ from math import *
 # print(f"läbimõõt on +f{läbimõõt}")
 
 #Ülesanne 5
-fthjstj
 
+N = float(input("Sisesta ristküliku pikkus (N): "))
+M = float(input("Sisesta ristküliku laius (M): "))
+diagonaal = sqrt(N**2 + M**2)
+print(f"Diagonaal on: {diagonaal}")
+
+
+# #Ülesanne 6
+# aeg = float(input("Mitu tundi kulus sõiduks? "))
+# teepikkus = float(input("Mitu kilomeetrit sõitsid? "))
+# kiirus = teppikus / aeg
+
+# print("Sinu kiirus oli " + str(kiirus) + " km/h")
+
+#Ülesanne 7
+# a1=randint(0,100)
+# a2=randint(0,100)
+# a3=randint(0,100)
+# a4=randint(0,100)
+# a5=randint(0,100)
+# keskmine=(a1+a2+a3+a4+a5)/5
+# print(f"Arvud olid: {a1}, {a2}, {a3}, {a4},{a5}. Nende keskmine on {keskmine}. ")
+
+#Ülesanne 8
+# tekst=""" 
+#     @..@
+#    (----)
+#   ( \__/ )
+#   ^^ "" ^^  """
+#   print(tekst)
+
+# print("    @..@")
+# print("   (----)")
+# print("  ( \__/ )")
+# print("""  ^^ "" ^^""") 
+
+#Ülesanne 9
+# a=randint(1,100)
+# b=randint(1,100)
+# c=randint(1,100)
+# P=(a+b+c)
+# print(f"Arvud olid: {a}, {b}, {c}. Periimetr on {P}")
+
+#Ülesanne 10
+
+# P=randint(2, 6)
+# hind=12.90*1.1
+# koos=(hind/P)
+# print(f"Pitsa maksab 12.90 eurot, sõbrad jätsid 10% jootraha. Seal oli {P} sõpra, igaüks maksis {koos} eurot.")
