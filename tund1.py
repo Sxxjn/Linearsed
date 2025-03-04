@@ -39,10 +39,10 @@ from random import randint
 
 #Ülesanne 5
 
-N = float(input("Sisesta ristküliku pikkus (N): "))
-M = float(input("Sisesta ristküliku laius (M): "))
-diagonaal = sqrt(N**2 + M**2)
-print(f"Diagonaal on: {diagonaal}")
+# N = float(input("Sisesta ristküliku pikkus (N): "))
+# M = float(input("Sisesta ristküliku laius (M): "))
+# diagonaal = sqrt(N**2 + M**2)
+# print(f"Diagonaal on: {diagonaal}")
 
 
 # #Ülesanne 6
