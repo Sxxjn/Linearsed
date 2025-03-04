@@ -16,6 +16,7 @@ try:
 except:
     print("Külje suurus on vaja int formaadis sisestada!")
 #-------------
+
 print("Ristküliku karakteristikud")
 b=input("Sisesta ristküliku 1. külje pikkus => ")
 c=input("Sisesta ristküliku 2. külje pikkus => ")
