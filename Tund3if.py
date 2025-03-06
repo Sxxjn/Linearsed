@@ -86,14 +86,14 @@ try:
 except:
     print("Pikkus, laius ja hind peavad olema numbrid!")
 
-# #Ülesanne 4
+#Ülesanne 4
 alghind=float(input("Sisesta toode alghind: "))
 if alghind>700:
     soodus=alghind=0.70
     print(f"Soodus hind on {soodus} eurot.")
 else: print("Soodustus ei kehti")
 
-# # #Ülesanne 5
+#Ülesanne 5
 try:
     temp=float(input("Mis temperatuur praegu on?"))
     if temp<18:
@@ -103,7 +103,7 @@ try:
 except:
     print("Viga!!")
 
-# #Ülesanne 6
+#Ülesanne 6
 try:
     pikkus=float(input("Sisesta oma pikkus: "))
     if pikkus<160:
