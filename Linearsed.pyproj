@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund 2.3 Praktiline töö.py</StartupFile>
+    <StartupFile>Tund3.2kordused.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="Linearsed.py" />
     <Compile Include="Iseseisev töö 1.py" />
+    <Compile Include="Tund3.2kordused.py" />
     <Compile Include="Prakt Lihtsad prgrammid.py" />
     <Compile Include="Tund 1.3 Iseseisev töö Vigade otsing 1.py" />
     <Compile Include="Tund 2.2 Valiklaused.py" />
