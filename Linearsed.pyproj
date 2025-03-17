@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund3.2kordused.py</StartupFile>
+    <StartupFile>tund4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,6 +30,7 @@
     <Compile Include="Tund 2.3 Praktiline töö.py" />
     <Compile Include="tund1.py" />
     <Compile Include="Tund3if.py" />
+    <Compile Include="tund4.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="comands.txt" />
