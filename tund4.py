@@ -20,6 +20,17 @@ for s in tekst_list:
         m+=1
     elif s==" ":
         t+=1
+    print(f"Vokaali: {v} \nKonsonanti: {k} \nNumbrid: {n} \nMärkid: {m} \nTühik: {t}")
+else:
+    print(f"Kokku on {len(tekst_list)}")
+    if s in vokaali:
+            v+=1
+    elif s in konsonanti:
+        k+=1
+    print(f"Vokaali: {v} \nKonsonanti: {k}")
+
+    #2
+
 
 
 
@@ -36,30 +47,39 @@ for s in tekst_list:
 # print(elemendid)
 # for e in elemendid:
 #     print(e)
+
 # #extend
 # list_sõne.extend(elemendid)
 # print(list_sõne)
 # print(elemendid)
+
 # #insert
 # elemendid.insert(0,"A")
 # print(elemendid)
+
 # #remove
 # elemendid.remove("A")
+
 # #pop
 # elemendid.pop(0)
 # elemendid.pop()
 # print(elemendid)
+
 # #index
 # ind=list_sõne.index("r")
 # print(f"Täht r on {ind}-indeksiga")
+
 # #count
 # k=list_sõne.index("r")
 # print(f"Täht r on {k} korda sõnas {sõne}")
+
 # #reverse
 # list_sõne.reverse()
 # print(list_sõne)
+
 # #copy
 # list_sõne2=list_sõne.copy()
+
 # #clear
 # list_sõne2.clear()
 # print(list_sõne2)
