@@ -35,6 +35,7 @@ else:
 
 
 
+
 # sõne="Programmeerimine"
 # print(sõne)
 # list_sõne=list(sõne)
