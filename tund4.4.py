@@ -29,14 +29,14 @@ else:
         k+=1
     print(f"Vokaali: {v} \nKonsonanti: {k}")
 
-#2 ülesanne
+#2 
 nimed=[]
 for i in range(5):
     nimi=input(f"Sisesta {i+1}. nimi: ")
     nimed.append(nimi)
 print("Tähestikulises järjekorras:", sorted(nimed))
 print("Viimati lisatud nimi:", nimed[-1])
-#Возможность изменения имен в списке
+
 muuda=input("Kas soovid nime muuta? (jah/ei): ")
 if muuda.lower()=="jah":
     vana_nimi=input("Sisesta nimi, mida soovid muuta: ")
