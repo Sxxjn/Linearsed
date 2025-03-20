@@ -31,6 +31,7 @@
     <Compile Include="tund1.py" />
     <Compile Include="Tund3if.py" />
     <Compile Include="tund4.4.py" />
+    <Compile Include="Tund4.5.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="comands.txt" />
