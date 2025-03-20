@@ -24,7 +24,7 @@ if tekst_list.index(" ")>0:
     print(f"V: {v}\nK: {k}\nN: {n}\nM: {m}\nT: {t}")
 else:
     print(f"Kokku on {len(tekst_list)}")
-
+     
 #2
 #2.1
 nimed=[]
