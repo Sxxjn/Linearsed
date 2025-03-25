@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Worlde_game.py</StartupFile>
+    <StartupFile>Tund5_Funktsioonide_kasutamine.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,8 @@
   <ItemGroup>
     <Compile Include="Linearsed.py" />
     <Compile Include="Iseseisev töö 1.py" />
+    <Compile Include="Tund5_Funktsioonide_kasutamine.py" />
+    <Compile Include="Tund5_Kasutataja_fun.py" />
     <Compile Include="Worlde_game.py" />
     <Compile Include="Tund3.2kordused.py" />
     <Compile Include="Prakt Lihtsad prgrammid.py" />
