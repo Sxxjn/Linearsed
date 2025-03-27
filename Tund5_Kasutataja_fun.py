@@ -1,6 +1,7 @@
 from operator import truediv
 
 
+#1
 def arithmetic(arv1: float, arv2:float, tehe: str):
     """
     Funktsioon töötab nagu lihtme kalkulaator
@@ -23,6 +24,7 @@ def arithmetic(arv1: float, arv2:float, tehe: str):
     return vastus
 
 
+#2
 def is_year_leap(aasta:int)->bool:
     """Liigaasta leidmine
     Tagastab True, kui aasta on liigaasta ja False kui aasta on tavaline aasta
@@ -34,3 +36,15 @@ def is_year_leap(aasta:int)->bool:
     else:
         v=False
     return v
+
+#3
+def square(külg:float)->any:
+    """"Ruudu pindala, ümbermõõdu ja diagonaali leidmine
+    :param float külg: Sisend kasutajalt
+    :rtype: float S,P,d
+    """
+
+    S=külg**2
+    P=4*külg
+    d=round((2)**(1/2)*külg)
+    return S,P,d
