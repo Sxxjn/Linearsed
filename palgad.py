@@ -30,3 +30,5 @@ while True:
         Võrdsed_palgad(palgad,inimesed)
     elif v==8:
         palk_otsimine(palgad,inimesed)
+    elif v==9:
+        filtr_palgad(palgad,inimesed)

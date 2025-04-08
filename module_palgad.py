@@ -2,7 +2,8 @@
 p=[]
 i=[]
 def Lisa_andmed(p:list,i:list):
-    """ Добавляем несколько людей и зарплат
+    """
+   Добавляем несколько людей и зарплат
     """
     while True:
         try:
@@ -21,7 +22,8 @@ def Lisa_andmed(p:list,i:list):
 
         
 def Kustuta_andmed(p:list,i:list):
-    """ Удалить человека и его зарплату
+    """ 
+    Удалить человека и его зарплату
     """
     try:
         nimi=input("Nimi: ")
@@ -39,7 +41,8 @@ def Kustuta_andmed(p:list,i:list):
         print("Kirjuta ainult tähtede kasutades!")
 
 def Suurim_palk(p:list,i:list):
-    """ Самая большая зарплата и кто ее получает
+    """ 
+    Самая большая зарплата и кто ее получает
     """
     max_palk=max(p)
     print(f"Suurim palk on {max_palk}")
@@ -51,7 +54,8 @@ def Suurim_palk(p:list,i:list):
         ind=ind+1
 
 def Väiksem_palk(p:list,i:list):
-    """ Самая маленькая зарплата и кто ее получает
+    """ 
+    Самая маленькая зарплата и кто ее получает
     """
     min_palk=min(p)
     print(f"Väiksem palk on {min_palk}")
@@ -63,7 +67,8 @@ def Väiksem_palk(p:list,i:list):
         ind=ind+1
 
 def sorteerimine_kasvav(p:list,i:list)->any:
-    """ Упорядочить зарплаты в порядке возрастания вместе с именами
+    """ 
+    Упорядочить зарплаты в порядке возрастания вместе с именами
     :param p: Список зарплат
     :type p: list
     :param i: Список имён
@@ -77,7 +82,8 @@ def sorteerimine_kasvav(p:list,i:list)->any:
     return p,i
 
 def sorteerimine_kahanev(p:list,i:list)->any:
-    """ Упорядочить зарплаты в порядке убывания вместе с именами
+    """ 
+    Упорядочить зарплаты в порядке убывания вместе с именами
     :param p: Список зарплат
     :type p: list
     :param i: Список имён
@@ -91,7 +97,8 @@ def sorteerimine_kahanev(p:list,i:list)->any:
     return p,i
 
 def Võrdsed_palgad(p:list,i:list):
-    """ Узнать, кто получает одинаковую зарплату, найти сколько таких людей вывести их данные на экран
+    """
+   Узнать, кто получает одинаковую зарплату, найти сколько таких людей вывести их данные на экран
     """
     hulk=set(p)
     print(hulk)
@@ -106,13 +113,29 @@ def Võrdsed_palgad(p:list,i:list):
                 ind+=1
 
 def palk_otsimine(p:list,i:list):
-    """Сделать поиск зарплаты по имени человека. 
     """
-    nimi=input("Sisesta nimi otsinguks: ")
-    leitud=False
-    for o in range(len(i)):
-        if i[o]==nimi:
-            print(f"{i[o]} saab palka {p[o]}")
-            leitud=True
+    Сделать поиск зарплаты по имени человека. 
+    """
+    try:
+        nimi=input("Sisesta nimi otsinguks: ")
+        leitud=False
+        for o in range(len(i)): #проходим по всем индексам
+            if i[o]==nimi: #если имя совпадает 
+                print(f"{i[o]} saab palka {p[o]}") # написать имя человека и какую зарплату он получает
+                leitud=True
+            else:
+                print("Sellise nimega inimest ei leitud.") # если имени нет в списке
+    except:
+        print("Viga!")
+
+def filtr_palgad(p:list,i:list):
+    try:
+        summa=float(input("Sisesta summa mille järgi filtreerida: "))
+        valik=input(f"Kas otsida inimesi, kelle palk on rohkem kui {summa}? ").lower()
+        if valik=="jah":
+            rohkem=True
         else:
-            print("Sellise nimega inimest ei leitud.")
+            rohkem=False
+        valitud_inimesed=[(i[j],p[j]) for j in range(len(p)) if rohkem]
+    except:
+        print("Viga!")
