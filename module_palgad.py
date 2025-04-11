@@ -112,30 +112,55 @@ def Võrdsed_palgad(p:list,i:list):
                 print(f"Saab kätte {i[ind]}")
                 ind+=1
 
-def palk_otsimine(p:list,i:list):
+def palgaotsing(p:list,i:list):
     """
     Сделать поиск зарплаты по имени человека. 
     """
-    try:
-        nimi=input("Sisesta nimi otsinguks: ")
-        leitud=False
-        for o in range(len(i)): #проходим по всем индексам
-            if i[o]==nimi: #если имя совпадает 
-                print(f"{i[o]} saab palka {p[o]}") # написать имя человека и какую зарплату он получает
-                leitud=True
-            else:
-                print("Sellise nimega inimest ei leitud.") # если имени нет в списке
-    except:
-        print("Viga!")
+    nimi=input("Sisesta nimi otsinguks: ")
+    leitud=False
+    for j in range(len(i)): #проходим по всем индексам
+        if i[j]==nimi: #если имя совпадает 
+            print(f"{i[j]} saab palka {p[j]}") # написать имя человека и какую зарплату он получает
+            leitud=True
+        if leitud==False:
+            print(f"({nimi} kohta andmeid ei leitud")
 
-def filtr_palgad(p:list,i:list):
+def filtr_palgad(p: list, i: list) -> None:
+    """Вывести список людей, у которых зарплата больше или меньше заданной пользователем суммы.
+    """
     try:
-        summa=float(input("Sisesta summa mille järgi filtreerida: "))
-        valik=input(f"Kas otsida inimesi, kelle palk on rohkem kui {summa}? ").lower()
+        summa = float(input("Sisesta summa, mille järgi filtreerida: "))  # Получаем сумму
+        valik = input("Kas otsida inimesi, kelle palk on rohkem kui määratud summa? (jah/ei): ").strip().lower()  # Определяем, искать ли зарплаты больше или меньше
         if valik=="jah":
             rohkem=True
         else:
             rohkem=False
-        valitud_inimesed=[(i[j],p[j]) for j in range(len(p)) if rohkem]
+        valitud_inimesed = [(i[j], p[j]) for j in range(len(p)) if (rohkem and p[j] > summa) or (not rohkem and p[j] < summa)] # Фильтрация индексов с зарплатами больше или меньше указанной суммы
+        if valitud_inimesed:  # Выводим результаты
+            print(f"Inimesed, kelle palk on {'rohkem' if rohkem else 'vähem'} kui {summa}:")
+            for nimi, palk in valitud_inimesed:
+                print(f"{nimi}: {palk}")
+        else:
+            print("Ei leidnud inimesi, kes vastaksid kriteeriumitele.")
+    except:
+        print("Palun sisestage korrektne number!")
+
+def Bonus_salary(p: list,i: list):
+    """
+    Своя функция по выбору. Добавляет прибавку к зарплате выбранному работнику, позволяя выбрать процент на какой зарплата увеличится
+    """
+    for idx, (name, salary) in enumerate(zip(i, p), 1):
+        print("\nCurrent employees and salaries:")
+        print(f"{idx}. {name}: {salary}$")
+    try:
+        choice = int(input("Valige töötaja: "))
+        bonus= float(input("Kirjutage mittu protsentis palk tõuseb:"))
+        if 0 <= choice < len(i) and bonus > 0:
+            original_salary = p[choice]
+            bonus_to = bonus / 100
+            bonus_salary = original_salary * bonus_to + original_salary
+            print(f"New salary is: {bonus_salary}$")
+        else:
+            print("Valge eksisteeriv töötaja ja valige bonus rohkem kui 0")
     except:
         print("Viga!")
