@@ -21,12 +21,7 @@ def patsiendid():
     
     # Menüü valikud
     while True:
-        print("\nMenüü:")
-        print("2. Arvuta D-vitamiini keskmine tase")
-        print("3. Kuvada K patsienti kõrgeima D-vitamiini tasemega")
-        print("4. Otsi patsienti nime järgi")
-        print("5. Kuvada kõik patsiendid")
-        print("0. Välju programmist")
+        print("\nMenüü: \n2. Arvuta D-vitamiini keskmine tase \n3. Kuvada K patsienti kõrgeima D-vitamiini tasemega \n4. Otsi patsienti nime järgi \n5. Kuvada kõik patsiendid \n0. Välju programmist ")
 
         valik = input("Vali tegevus: ")
 
@@ -47,13 +42,6 @@ def patsiendid():
         else:
             print("Vigane valik. Proovi uuesti.")
 
-# Kuvab patsiendid, kelle D-vitamiin < 30
-def kuva_puudusega(nimed, D_vit):
-    print("\nPatsiendid, kellel on D-vitamiini puudus (<30):")
-    for nimi, tase in zip(nimed, D_vit):
-        if tase < 30:
-            print(f"{nimi}: {tase}")
-
 # Arvutab keskmise taseme
 def arvuta_keskmine(D_vit):
     if D_vit:
@@ -61,6 +49,13 @@ def arvuta_keskmine(D_vit):
         print(f"\nD-vitamiini keskmine tase: {keskmine:.2f}")
     else:
         print("Nimekiri on tühi.")
+
+# Kuvab patsiendid, kelle D-vitamiin < 30
+def kuva_puudusega(nimed, D_vit):
+    print("\nPatsiendid, kellel on D-vitamiini puudus (<30):")
+    for nimi, tase in zip(nimed, D_vit):
+        if tase < 30:
+            print(f"{nimi}: {tase}")
 
 # Kuvab top K patsienti kõrgeima tasemega
 def kuva_top_k(nimed, D_vit, k):
