@@ -1,34 +1,44 @@
+# Tühja sõnastiku loomine
+andmed = {}
+# Võtmete ja väärtustega
+andmed = {'nimi': 'Mari', 'vanus': 25, 'keel': 'eesti'}
+# dict() funktsiooniga
+andmed = dict(nimi='Mari', vanus=25, keel='eesti')
+print(andmed)
+print(andmed["nimi"]) #показать значение ключа "nimi"
+print(andmed.get("nimi")) #показать значение ключа "nimi"
+print(andmed.get("nimi_","Ei ole sõnastikus")) 
+print(andmed.keys()) #показать ключи
+print(andmed.values()) #показать значения
+for k, v in andmed.items(): #показать список ключ и значение
+    print(k, v)
+andmed["email"]="ananas@ananas.ee" #добавление ключа и значения
+print(andmed)
+andmed["prillid"]=True #добавление ключа
+print(andmed)
+del andmed['prillid'] #удаление ключа
+print(andmed)
+andmed.update({'nimi':'Kati'}) #Обновление значения имя
+print(andmed)
+
 from random import *
-from sõnastikud_fn import *
+read = ['Mis on Python?-programmeerimiskeel', 'Eesti pealinn?-Tallinn', 'Mis on eesti rahvuslill?-Rukkilill', 'Mis on eesti rahvuslind?-Suitsupääsuke']
+kus_vas = {}
+for rida in read:
+    kysimus, vastus = rida.split('-')
+    kus_vas[kysimus.strip()] = vastus.strip()
+print(kus_vas) # {'Mis on Python?': 'programmeerimiskeel', 'Eesti pealinn?': 'Tallinn', 'Mis on eesti rahvuslill?': 'Rukkilill', 'Mis on eesti rahvuslind?': 'Suitsipääsuke'}
+print(kus_vas['Mis on Python?'])
 
-
-# Peamine menüü ja tsükkel
-def main():
-    while True:
-        print("\nTere tulemast eesti-vene sõnastikku!")
-        print("Valikud: \n1 - Tõlgi eesti -> vene\n2 - Tõlgi vene -> eesti\n3 - Lisa uus sõna\n4 - Paranda sõna\n5 - Testi teadmisi\n6 - Välju")
-        
-        valik = input("Tee oma valik: ")
-        
-        if valik == '1':
-            sona = input("Sisesta sõna eesti keeles: ")
-            print(f"Tõlge vene keelde: {tolgi_est_rus(sona)}")
-        elif valik == '2':
-            sona = input("Sisesta sõna vene keeles: ")
-            print(f"Tõlge eesti keelde: {tolgi_rus_est(sona)}")
-        elif valik == '3':
-            lisa_sona()
-        elif valik == '4':
-            paranda_sona()
-        elif valik == '5':
-            tee_knowlege_test()
-        elif valik == '6':
-            print("Head aega!")
-            break
-        else:
-            print("Vale valik! Palun vali uuesti.")
-
-
-if __name__ == "__main__":
-    main()
-    #e
+kysimused=list(kus_vas.keys())
+while True:
+    n=randint(0, len(read)-1)
+    valitud_kysimus=kysimused[n]
+    print(valitud_kysimus)
+    vastus=input("Sisesta vastus: ")
+    if kus_vas[valitud_kysimus].lower()==vastus.lower():
+        print("Õige vastus")
+    elif kus_vas[valitud_kysimus].lower()==0:
+        break
+    else:
+        print("Vale vastus")

@@ -1,64 +1,121 @@
-# Algne sõnastik
-sonastik = {
-    'koer': 'собака',
-    'kass': 'кошка',
-    'maja': 'дом',
-    'auto': 'машина',
-    'päike': 'солнце'
-}
+import random
+import pyttsx3  #Импортируем библиотеку для синтеза речи
 
-# Tõlge eesti keelest vene keelde
-def tolgi_est_rus(sona):
-    return sonastik.get(sona, "Sõna ei leitud!")
+sonad = [ # Список словарей, где каждое слово представлено на трёх языках: эстонский, русский, английский
+    {'est': 'koer', 'rus': 'собака', 'eng': 'dog'},
+    {'est': 'kass', 'rus': 'кошка', 'eng': 'cat'},
+    {'est': 'maja', 'rus': 'дом', 'eng': 'house'},
+    {'est': 'auto', 'rus': 'машина', 'eng': 'car'},
+    {'est': 'päike', 'rus': 'солнце', 'eng': 'sun'}
+]
 
-# Tõlge vene keelest eesti keelde
-def tolgi_rus_est(sona):
-    for key, value in sonastik.items():
-        if value == sona:
-            return key
+def valjasta_tervitus():  #Приветствие при запуске программы
+    print("Tere tulemast keelesõnastikku!")
+
+
+def kuva_menu():
+    """Меню выбора
+    """
+    print("Menu:")
+    print("1 - Tõlgi sõna\n2 - Lisa uus sõna \n3 - Paranda sõna\n4 - Kuva kõik sõnad\n5 - Testi teadmisi\n6 - Tekst kõneks\n0 - Välja")
+
+
+def tolkija(sonad, allikas, siht, sona):
+    """Функция перевода слова с одного языка на другой
+    """
+    for kirje in sonad: #Перебираем каждую запись в словаре
+        if kirje[allikas] == sona.lower(): #Если слово найдено в выбранном языке
+            return kirje[siht] #Возвращаем перевод
     return "Sõna ei leitud!"
 
-# Uue sõna lisamine sõnastikku
-def lisa_sona():
-    eesti_sona = input("Sisesta uus sõna eesti keeles: ")
-    vene_sona = input(f"Sisesta selle sõna vene tõlge: ")
-    sonastik[eesti_sona] = vene_sona
-    print("Sõna lisatud!")
 
-# Sõna parandamine sõnastikus
-def paranda_sona():
-    vana_sona = input("Sisesta sõna, mida soovid parandada (eesti või vene): ")
-    if vana_sona in sonastik:
-        uus_sona = input(f"Anna {vana_sona} jaoks uus vene tõlge: ")
-        sonastik[vana_sona] = uus_sona
-        print(f"Sõna {vana_sona} on nüüd parandatud!")
+def lisa_sona(sonad):
+    """Добавление нового слова в словарь
+    """
+    print("Lisame uue sõna sõnastikku!") #Запрашиваем слово на всех трёх языках, маленькими буквами и убираем лишние пробелы
+    uus_est = input("Sisesta sõna eesti keeles: ").strip().lower()
+    uus_rus = input("Sisesta sõna vene keeles: ").strip().lower()
+    uus_eng = input("Sisesta sõna inglise keeles: ").strip().lower()
+    sonad.append({'est': uus_est, 'rus': uus_rus, 'eng': uus_eng}) #Добавляем словарь в список
+    print("Uus sõna on lisatud!")
+
+def loo_sonastik():
+    return sonad
+    """ Возвращает текущий словарь
+    """
+
+def vali_keelte_suund():
+    """Функция выбора языка. из какого в какой
+    """
+    print("Sisesta keelte suund:")
+    allikas=input("Sisesta allikakeel est/eng/rus: ").lower() #из какого
+    siht=input("Sisesta sihtkeel est/eng/rus: ").lower() #в какой
+    return allikas, siht
+
+
+def paranda_sona(sonad):
+    """Исправление слова
+    """
+    parandatav=kysi_kasutajalt_sisestus("Sisesta parandatav sõna: ")  #Запрашиваем у пользователя слово для исправления через функцию kysi_kasutajalt_sisestus
+    kirje=otsi_sona(sonad, parandatav)  #Используем функцию otsi_sona для поиска слова в словаре
+    if kirje:  #Если слово найдено
+        kirje['est']=kysi_kasutajalt_sisestus("Uus eesti sõna: ")  #спрашиваем новые переводы через функцию
+        kirje['rus']=kysi_kasutajalt_sisestus("Uus vene sõna: ")  
+        kirje['eng']=kysi_kasutajalt_sisestus("Uus inglise sõna: ")  
+        print("Parandatud!") 
     else:
-        for key, value in sonastik.items():
-            if value == vana_sona:
-                uus_sona = input(f"Anna {vana_sona} jaoks uus eesti tõlge: ")
-                sonastik[key] = uus_sona
-                print(f"Sõna {vana_sona} on nüüd parandatud!")
-                break
+        print("Sõna ei leitud!")  #Если слово не найдено
+
+def kysi_kasutajalt_sisestus(tekst):
+    """Запрашиваем ввод от пользователя и проверяем, что он не пустой
+    """
+    while True:
+        sisend=input(tekst).lower()  #Запрашиваем ввод, маленькими буквами
+        if sisend=="":  #Если строка пустая
+            print("Tühja ei tohi jätta!")  #то пишем что нельзя оставить пустой
         else:
-            print("Sõna ei leitud!")
+            return sisend  #Возвращаем введённое слово
 
-# Teadmiste testimine
-def testi_teadmisi():
-    eesti_keelega_sona = random.choice(list(sonastik.keys()))
-    vene_keelega_sona = sonastik[eesti_keelega_sona]
-    vastus = input(f"Sisesta vene tõlge sõnale '{eesti_keelega_sona}': ")
-    if vastus.lower() == vene_keelega_sona.lower():
-        print("Õige!")
-        return True
-    else:
-        print(f"Vale! Õige vastus on '{vene_keelega_sona}'.")
-        return False
+def otsi_sona(sonad, sona):
+    """Ищет слово во всех значениях словаря и возвращает его запись
+    """
+    for k in sonad:  #Перебираем все записи в словаре
+        if sona in k.values():  #Если слово найдено в любом из языков
+            print(f"Leitud sõna: {k}")  #Показываем найденное слово и все переводы
+            return k  #Возвращаем слово
+    return None  #Если слово не найдено
 
-# Funktsioon teadmistestide tegemiseks
-def tee_knowlege_test():
-    test_count = 5  # Küsida 5 sõna
-    correct_answers = 0
-    for _ in range(test_count):
-        if testi_teadmisi():
-            correct_answers += 1
-    print(f"Test lõppenud! Sinu tulemus: {correct_answers * 100 / test_count}%")
+
+def testi_teadmisi(sonad):
+    """Проверка знаний
+    """
+    allikas, siht=vali_keelte_suund() #Получаем языки перевода
+    õige=0
+    kogus=int(input("Mitu sõna soovite kontrollida? ")) #Запрашиваем количество слов
+    for _ in range(kogus): #Повторяем нужное число раз
+        kirje=random.choice(sonad) #Выбираем рандомные слова
+        vastus=input(f"Tõlgi {kirje[allikas]}: ").lower()
+        if vastus==kirje[siht]: #Сравниваем с правильным
+            print("Õige vastus")
+            õige +=1
+        else:
+            print(f"Vale vastus. Õige on {kirje[siht]}")
+    kuva_tulemus(õige, kogus)
+
+def kuva_tulemus(õige, kogus):
+    """Вывод результата после проверки знаний
+    """
+    print(f"Sinu tulemus: {õige}/{kogus}") #Выводим, сколько правильных из всех
+
+def kuva_sonad(sonad):
+    """Показывает все слова в словаре
+    """
+    for k in sonad: #Перебираем и печатаем каждое слово
+        print(k)
+
+
+def text_to_speech():
+    mootor = pyttsx3.init() #Инициализация "голоса"
+    sona = input("Sisesta sõna: ").lower() #Запрашиваем слово
+    mootor.say(sona) #Озвучиваем его
+    mootor.runAndWait() #Запускаем произношение

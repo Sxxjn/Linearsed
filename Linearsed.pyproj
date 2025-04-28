@@ -24,6 +24,8 @@
     <Compile Include="5.5Arvestustöö.py" />
     <Compile Include="Linearsed.py" />
     <Compile Include="Iseseisev töö 1.py" />
+    <Compile Include="tel_funktsioon.py" />
+    <Compile Include="tel_main.py" />
     <Compile Include="module_palgad.py" />
     <Compile Include="palgad.py" />
     <Compile Include="Sõnastikud.py" />
@@ -43,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="comands.txt" />
+    <Content Include="telefoniraamat.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
