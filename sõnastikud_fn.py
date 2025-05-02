@@ -1,13 +1,19 @@
 import random
-import pyttsx3  #Импортируем библиотеку для синтеза речи
+# import pyttsx3  #Импортируем библиотеку для синтеза речи
 
-sonad = [ # Список словарей, где каждое слово представлено на трёх языках: эстонский, русский, английский
-    {'est': 'koer', 'rus': 'собака', 'eng': 'dog'},
-    {'est': 'kass', 'rus': 'кошка', 'eng': 'cat'},
-    {'est': 'maja', 'rus': 'дом', 'eng': 'house'},
-    {'est': 'auto', 'rus': 'машина', 'eng': 'car'},
-    {'est': 'päike', 'rus': 'солнце', 'eng': 'sun'}
-]
+
+def sonad_failist(fail):
+    sonad=[]
+    with open(fail,'r',encoding="utf-8-sig") as f:
+        for rida in f:
+            est,rus,eng=rida.strip().split(",")
+            sonad.append({'est':est,'rus':rus,'eng':eng})
+    return sonad
+
+def salvesta_sonad(fail,sonad):
+    with open(fail,'w',encoding="utf-8-sig") as f:
+        for k in sonad:
+            f.write(f"{k['est']},{k['rus']},{k['eng']}\n")
 
 def valjasta_tervitus():  #Приветствие при запуске программы
     print("Tere tulemast keelesõnastikku!")
