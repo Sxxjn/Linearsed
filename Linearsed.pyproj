@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tel_main.py</StartupFile>
+    <StartupFile>work8.1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -32,6 +32,8 @@
     <Compile Include="sõnastikud_fn.py" />
     <Compile Include="Tund5_Funktsioonide_kasutamine.py" />
     <Compile Include="Tund5_Kasutataja_fun.py" />
+    <Compile Include="Tund8.py" />
+    <Compile Include="work8.1.py" />
     <Compile Include="Worlde_game.py" />
     <Compile Include="Tund3.2kordused.py" />
     <Compile Include="Prakt Lihtsad prgrammid.py" />
