@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>work8.1.py</StartupFile>
+    <StartupFile>Work8.2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -34,6 +34,7 @@
     <Compile Include="Tund5_Kasutataja_fun.py" />
     <Compile Include="Tund8.py" />
     <Compile Include="work8.1.py" />
+    <Compile Include="Work8.2.py" />
     <Compile Include="Worlde_game.py" />
     <Compile Include="Tund3.2kordused.py" />
     <Compile Include="Prakt Lihtsad prgrammid.py" />
@@ -47,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="comands.txt" />
+    <Content Include="maed.txt" />
     <Content Include="telefoniraamat.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
