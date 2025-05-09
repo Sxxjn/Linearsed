@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Work8.2.py</StartupFile>
+    <StartupFile>telraamatkkk.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,6 +24,8 @@
     <Compile Include="5.5Arvestustöö.py" />
     <Compile Include="Linearsed.py" />
     <Compile Include="Iseseisev töö 1.py" />
+    <Compile Include="teeme8.2_Tinker.py" />
+    <Compile Include="telraamatkkk.py" />
     <Compile Include="tel_funktsioon.py" />
     <Compile Include="tel_main.py" />
     <Compile Include="module_palgad.py" />
