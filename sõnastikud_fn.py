@@ -1,5 +1,5 @@
 import random
-# import pyttsx3  #Импортируем библиотеку для синтеза речи
+import pyttsx3  #Импортируем библиотеку для синтеза речи
 
 
 def sonad_failist(fail):
