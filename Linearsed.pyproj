@@ -35,6 +35,7 @@
     <Compile Include="sõnastikud_fn.py" />
     <Compile Include="Tund5_Funktsioonide_kasutamine.py" />
     <Compile Include="Tund5_Kasutataja_fun.py" />
+    <Compile Include="tund6.1.py" />
     <Compile Include="Tund8.py" />
     <Compile Include="work8.1.py" />
     <Compile Include="Work8.2.py" />
