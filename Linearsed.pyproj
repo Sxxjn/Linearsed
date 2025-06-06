@@ -24,6 +24,7 @@
     <Compile Include="5.5Arvestustöö.py" />
     <Compile Include="Linearsed.py" />
     <Compile Include="Iseseisev töö 1.py" />
+    <Compile Include="patients.py" />
     <Compile Include="teeme8.2_Tinker.py" />
     <Compile Include="telraamatkkk.py" />
     <Compile Include="tel_funktsioon.py" />
