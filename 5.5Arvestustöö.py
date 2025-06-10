@@ -1,7 +1,13 @@
 import random
 from patients import create_patients, patients_below_30, average_vitamin_level, top_k_patients, search_patient
 
-n = int(input("Sisesta patsientide arv: "))
+while True:
+    try:
+        n = int(input("Sisesta patsientide arv: "))
+        break
+    except ValueError:
+        print("Palun sisesta korrektne täisarv.") 
+
 
 nimed, vitamiinid = create_patients(n)
 
