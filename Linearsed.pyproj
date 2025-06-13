@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>41decbb5-9274-41fd-9cbe-9f1848117604</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ylesanne1.3.py</StartupFile>
+    <StartupFile>ylesanne2.2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -51,6 +51,7 @@
     <Compile Include="Tund3if.py" />
     <Compile Include="tund4.4.py" />
     <Compile Include="Tund4.5.py" />
+    <Compile Include="ygame.py" />
     <Compile Include="ylesanne1.1.py" />
     <Compile Include="ylesanne1.2.py" />
     <Compile Include="ylesanne1.3.py" />
@@ -59,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="comands.txt" />
+    <Content Include="kontaktid.json" />
     <Content Include="maed.txt" />
     <Content Include="telefoniraamat.txt" />
   </ItemGroup>

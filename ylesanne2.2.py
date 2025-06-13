@@ -21,13 +21,15 @@ def main():
     running = True
 
     while running:
-        ekraan.fill((255, 255, 255))  # valge taust
+        ekraan.fill((153, 255, 153))  
 
         must = (0, 0, 0)
         valge = (255, 255, 255)
+        lGreen = (153, 255, 153)
+        red = (255, 0, 0)
 
         # Joonista ruudustik — valge täitevärv ja mustad jooned
-        joonista_ruudustik(ekraan, 20, 20, 24, 32, must, valge)
+        joonista_ruudustik(ekraan, 20, 20, 24, 32, red, lGreen)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
